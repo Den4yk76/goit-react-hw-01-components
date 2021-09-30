@@ -1,14 +1,16 @@
+import PropTypes from 'prop-types';
+
 export default function Stats({ title, stats }) {
   return (
-    <section class="statistics">
-      <h2 class="title">{title && 'Upload stats'}</h2>
+    <section className="statistics">
+      <h2 className="title">{title && 'Upload stats'}</h2>
 
-      <ul class="stat-list">
+      <ul className="stat-list">
         {stats.map(el => {
           return (
-            <li key={el.id} class="item">
-              <span class="label">{el.label} </span>
-              <span class="percentage">{el.percentage}%</span>
+            <li key={el.id} className="item">
+              <span className="label">{el.label} </span>
+              <span className="percentage">{el.percentage}%</span>
             </li>
           );
         })}
@@ -16,3 +18,8 @@ export default function Stats({ title, stats }) {
     </section>
   );
 }
+
+Stats.propTypes = {
+  title: PropTypes.bool,
+  stats: PropTypes.arrayOf(PropTypes.object),
+};
