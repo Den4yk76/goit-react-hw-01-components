@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import './Painting.css';
 import defaultImg from '../../components/default.jpg';
 
 export default function Painting({
@@ -14,24 +15,24 @@ export default function Painting({
         <img
           src={avatar}
           alt="Аватар пользователя"
-          className="avatar"
+          className="profile__avatar"
           width="250"
         />
-        <p className="name">{name}</p>
-        <p className="tag">@{tag}</p>
-        <p className="location">{location}</p>
+        <p className="profile__name">{name}</p>
+        <p className="profile__tag">@{tag}</p>
+        <p className="profile__location">{location}</p>
       </div>
 
-      <ul className="stats">
-        <li>
+      <ul className="profile__stats">
+        <li className="profile__stats-item">
           <span className="label">Followers </span>
           <span className="quantity">{stats.followers}</span>
         </li>
-        <li>
+        <li className="profile__stats-item">
           <span className="label">Views </span>
           <span className="quantity">{stats.views}</span>
         </li>
-        <li>
+        <li className="profile__stats-item">
           <span className="label">Likes </span>
           <span className="quantity">{stats.likes}</span>
         </li>
